@@ -1,0 +1,83 @@
+﻿@model SmartTransit.Models.Delivery
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Full Delivery Detail</h3>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Client First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.FirstName)
+        </dd>
+
+        <dt>
+            Last Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Client.LastName)
+        </dd>
+
+        <dt>
+            Address
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Client.Address)
+        </dd>
+
+
+
+        <dt>
+            Driver Frist Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Driver.FirstName)
+        </dd>
+
+        <dt>
+            Last Name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Driver.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+
+
+        <dt>
+            Pickup Location
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickUpLocation)
+        </dd>
+
+        <dt>
+            Deliver To
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliverTo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DeliveryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

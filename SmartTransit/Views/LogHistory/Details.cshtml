@@ -1,0 +1,54 @@
+﻿
+@model IEnumerable<SmartTransit.Models.LogHistory>
+
+@{
+    ViewBag.Title = "Detail Log History";
+}
+
+<h2>Detail Log History</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+<table class="table">
+    <tr>
+        <th>
+            Tracking ID
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Date
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to Log History", "index")
+</div>
+
