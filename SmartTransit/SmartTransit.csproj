@@ -138,6 +138,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\APIsmartTransitController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\DriverController.cs" />
@@ -209,6 +210,7 @@
     <Content Include="Views\Delivery\Details.cshtml" />
     <Content Include="Views\Delivery\Edit.cshtml" />
     <Content Include="Views\Delivery\Index.cshtml" />
+    <Content Include="Views\Delivery\LogHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

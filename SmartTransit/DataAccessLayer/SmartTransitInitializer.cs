@@ -45,7 +45,7 @@ namespace SmartTransit.DataAccessLayer
             // Log History
             var loghosteries = new List<LogHistory>
             {
-            new LogHistory{  ID = 1, DeliveryID = "UN1001", Date = DateTime.Today,  Status = "Ready for delivery" },
+            new LogHistory{  DeliveryID = "UN1001", Date = DateTime.Today,  Status = "Ready for delivery"  },
 
             };
 

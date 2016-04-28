@@ -40,6 +40,7 @@ namespace SmartTransit.Controllers
         // GET: Delivery/Create
         public ActionResult Create()
         {
+            
             ViewBag.ClientID = new SelectList(db.Clients, "ClientID", "FirstName");
             ViewBag.DriverID = new SelectList(db.Drivers, "DriverID", "FirstName");
             return View();
@@ -54,6 +55,7 @@ namespace SmartTransit.Controllers
         {
             if (ModelState.IsValid)
             {
+                db.Deliveries.Add(delivery).CurrentStatus = "Ready for delivery";
                 db.Deliveries.Add(delivery);
                 db.SaveChanges();
                 return RedirectToAction("Index");

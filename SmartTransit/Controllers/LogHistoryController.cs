@@ -51,6 +51,7 @@ namespace SmartTransit.Controllers
         public ActionResult Create()
         {
             // ViewBag.DeliveryID = new SelectList(db.Deliveries, "DeliveryID", "ClientID");
+            ViewBag.Status = new SelectList(LogHistory.StatusType);
             ViewBag.DeliveryID = new SelectList(db.Deliveries.Where(d => d.CurrentStatus != "Delivered").Select(d => d.DeliveryID));
             return View();
         }

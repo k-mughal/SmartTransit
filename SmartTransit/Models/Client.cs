@@ -36,7 +36,7 @@ namespace SmartTransit.Models
         [MinLength(6)]
         [MaxLength(25)]
         public string Address { get; set; }
-     
+
         public virtual ICollection<Delivery> Deliveries { get; set; }
     }
 }

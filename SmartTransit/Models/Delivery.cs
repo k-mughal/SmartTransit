@@ -9,6 +9,7 @@ namespace SmartTransit.Models
 {
     public class Delivery
     {
+ 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Required(ErrorMessage = "Invalid Delivery ID")]
         [MinLength(4)]

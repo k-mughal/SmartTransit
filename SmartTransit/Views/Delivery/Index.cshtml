@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            Tracking No
+        </th>
+        <th>
             Client Name
         </th>
 
@@ -40,8 +43,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Client.FirstName) @*<text></text>*@
-                @*@Html.DisplayFor(modelItem => item.Client.LastName)*@
+                @Html.DisplayFor(modelItem => item.DeliveryID)
+                
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.FirstName) 
             </td>
 
             <td>
@@ -67,7 +74,8 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.DeliveryID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.DeliveryID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.DeliveryID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.DeliveryID })}) |
+                @Html.ActionLink("History", "LogHistory", new { id = item.DeliveryID })
             </td>
         </tr>
     }
