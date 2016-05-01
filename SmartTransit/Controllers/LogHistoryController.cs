@@ -90,8 +90,6 @@ namespace SmartTransit.Controllers
                 }
 
 
-
-
                 db.LogsHistory.Add(logHistory);
                 db.SaveChanges();
                 return RedirectToAction("Index");
