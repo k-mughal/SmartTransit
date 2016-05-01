@@ -24,18 +24,19 @@ namespace SmartTransit.Controllers
 
 
             // Show All Post in Database
-            [Route("ShowAllClientsList")]
+            [Route("ShowTrackingHistory")]
             [HttpGet]
-            public IHttpActionResult AllPosts()
+            public IHttpActionResult AllTrackingHistory()
             {
 
-                var clientRec = db.Clients.Select(d => d.FirstName);
-          
-                if (clientRec == null)
-                {
-                    return NotFound();
-                }
-                return Ok(clientRec.ToList());
+                //  var clientRec = db.Clients.Select(d => d.FirstName);
+                return Ok(db.LogsHistory);
+
+                //if (clientRec == null)
+                //{
+                //    return NotFound();
+                //}
+                //return Ok(clientRec.ToList());
 
             }
 
@@ -68,7 +69,7 @@ namespace SmartTransit.Controllers
 
                                  where logHistory.DeliveryID == ShowLogHistory
                                  orderby logHistory.ID
-                                 select (logHistory.Status));
+                                 select (logHistory));
 
                 if (clientRec == null)
                 {
