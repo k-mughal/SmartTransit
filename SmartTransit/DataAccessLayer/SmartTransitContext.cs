@@ -18,6 +18,7 @@ namespace SmartTransit.DataAccessLayer
         public DbSet<Delivery> Deliveries { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<LogHistory> LogsHistory { get; set; }
+       
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

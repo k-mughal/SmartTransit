@@ -11,32 +11,34 @@ namespace SmartTransit.Models
     {
  
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Required(ErrorMessage = "Invalid Delivery ID")]
+        [Required(ErrorMessage = "Minimum 4 and Maximum 10 Characters required")]
         [MinLength(4)]
         [MaxLength(10)]
         public string DeliveryID { get; set; }
 
         public string ClientID { get; set; }
         public string DriverID { get; set; }
-            
+
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime Date { get; set; }
 
         public string CurrentStatus { get; set; }
-        [Required(ErrorMessage = "Invalid Type")]
+        [Required(ErrorMessage = "Minimum 2 and Maximum 10 Characters required")]
         [MinLength(2)]
         [MaxLength(10)]
         public string Type { get; set; }
 
-        [Required(ErrorMessage = "Invalid")]
+        [Required(ErrorMessage = "Minimum 4 and Maximum 20 Characters required")]
         [MinLength(4)]
         [MaxLength(20)]
         public string PickUpLocation { get; set; }
 
-        [Required(ErrorMessage = "Invalid")]
+        [Required(ErrorMessage = "Minimum 4 and Maximum 20 Characters required")]
         [MinLength(4)]
         [MaxLength(20)]
         public string DeliverTo { get; set; }
-
 
         public virtual Client Client { get; set; }
         public virtual Driver Driver { get; set; }

@@ -55,9 +55,19 @@ namespace SmartTransit.Controllers
         {
             if (ModelState.IsValid)
             {
+
+
+                db.Deliveries.Add(delivery).DeliveryID = "UNQ" + delivery.DeliveryID;
                 db.Deliveries.Add(delivery).CurrentStatus = "Ready for delivery";
                 db.Deliveries.Add(delivery);
                 db.SaveChanges();
+
+                //add status to logHistory
+                var logHistory = new LogHistory { DeliveryID = delivery.DeliveryID, Date = delivery.Date, Status = "Ready for Delivery" };
+                db.LogsHistory.Add(logHistory);
+                db.SaveChanges();
+
+
                 return RedirectToAction("Index");
             }
 
@@ -126,6 +136,22 @@ namespace SmartTransit.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult LogHistory(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            //LogHistory logHistory = db.LogsHistory.Find(id);
+            var logsHistory = db.LogsHistory.Where(d => d.DeliveryID == id).OrderBy(d => d.ID); //.Include(l => l.Delivery);
+            if (logsHistory == null)
+            {
+                return HttpNotFound();
+            }
+            return View(logsHistory);
+        }
+
 
         protected override void Dispose(bool disposing)
         {

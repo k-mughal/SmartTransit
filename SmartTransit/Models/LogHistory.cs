@@ -23,6 +23,7 @@ namespace SmartTransit.Models
         public string DeliveryID { get; set; }
 
         [Required(ErrorMessage = "Required ! ")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
         public string Status { get; set; }
 
