@@ -76,7 +76,7 @@ namespace SmartTransit.Controllers
             }
 
             //      /TransitWebServices/DriverOnJob/DR1001
-         //   [Route("DriverOnJob/{DriverOnJob}")]
+        
             [Route("DeliveryDetail")]
             [HttpGet]
             public IHttpActionResult ShowDriverOnJob()
@@ -94,6 +94,7 @@ namespace SmartTransit.Controllers
                 }
                 return Ok(driverRec);
             }
+            
             // TransitWebServices/ShowDeliveries
             [Route("ShowDeliveries")]
             [HttpGet]
@@ -117,28 +118,7 @@ namespace SmartTransit.Controllers
             }
 
         }
-        //[Route("areacode/{areacode}/cheapest/{fueltype:alpha}")]
-        //[Route("AddLogHistory/{AddLogHistory}")]
-        //[Route("AddLogHistory")]
-        //[HttpPost]
-        //public IHttpActionResult PostAddLogHistory()
-        //{
-        //    var logrec = db.LogsHistory.FirstOrDefault(log => log.Status == "Delivered");//&& log.Status != "Delivered");
-        //                                                                                 //if (logrec == null)
-        //                                                                                 //{
-        //                                                                                 //logrec.Status = status;
-
-        //    db.LogsHistory.Add(logrec).DeliveryID = "UNQ1005";
-        //    db.LogsHistory.Add(logrec).Status = "test status";
-        //    db.SaveChanges();
-        //    string uri = Url.Link("DefaultApi", new { ticker = logrec.DeliveryID });
-        //    return Ok();
-
-        //    //}
-        //    //else
-        //    //{
-        //    //    return NotFound();
-        //    //}
+       
         }
 
 

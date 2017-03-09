@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SmartTransit.Models;
+using System;
 using System.Collections.Generic;
-using SmartTransit.Models;
 using System.Data.Entity;
 namespace SmartTransit.DataAccessLayer
 {

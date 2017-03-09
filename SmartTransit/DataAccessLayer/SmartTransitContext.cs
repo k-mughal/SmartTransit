@@ -1,6 +1,6 @@
 ﻿using SmartTransit.Models;
-using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 
 namespace SmartTransit.DataAccessLayer

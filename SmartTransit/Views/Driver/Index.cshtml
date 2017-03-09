@@ -48,6 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
+                @Html.RadioButton("ABC", "YES")Yes
                 @Html.ActionLink("Edit", "Edit", new { id = item.DriverID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.DriverID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.DriverID })

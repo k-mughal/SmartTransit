@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace SmartTransit.Models
 {
@@ -37,6 +34,6 @@ namespace SmartTransit.Models
         [MaxLength(25)]
         public string Address { get; set; }
 
-        public virtual ICollection<Delivery> Deliveries { get; set; }
+       // public virtual ICollection<Delivery> Deliveries { get; set; }
     }
 }
